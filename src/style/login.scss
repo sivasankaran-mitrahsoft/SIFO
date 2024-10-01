@@ -13,8 +13,8 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: $background-color;
-//   background-image: url('https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=800');
+  background-size: cover;
+  background-image: url('https://c1.wallpaperflare.com/preview/236/549/130/stethoscope-hospital-doctor-health.jpg');
 }
 
 // Styling for the login box
@@ -23,8 +23,16 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px $shadow-color;
-  width: 300px;
+  width: 400px;
   text-align: center;
+
+  .forgot-password{
+    text-align: end;
+    margin: 12px 0px 0px 20px;
+    a{
+      text-decoration-line: none;
+    }
+  }
 
   h2 {
     margin-bottom: 1.5rem;
@@ -46,7 +54,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
       }
 
       input {
-        width: 100%;
+        width: 96%;
         padding: 0.5rem;
         border: 1px solid $input-border;
         border-radius: 5px;
@@ -59,7 +67,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
         }
       }
     }
-
+    
     // Login button
     .login-btn {
       width: 100%;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchUsers } from '../../redux/action';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -45,6 +46,9 @@ const Login = () => {
           </div>
           <button type="submit" className="login-btn">Login</button>
         </form>
+        <div className="forgot-password">
+          <Link to="/forgotpassword">Forgot Password?</Link>
+        </div>
       </div>
     </div>
   );

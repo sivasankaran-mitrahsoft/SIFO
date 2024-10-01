@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
+import { Navigate, useNavigate  } from 'react-router-dom';
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
-
+  const navigate = useNavigate();
   // Function to handle form submission
   const handleSendPassword = () => {
     console.log('Password reset request sent to:', email);
   };
 
   // Function to handle back to login
-  const handleBackToLogin = () => {
-    console.log('Redirecting to login...');
-  };
-
+  
   return (
-    <div className="forgot-password-container">
+    <div className="login-container">
+         <div className="forgot-password-center">
       <h2>Forgot Password</h2>
 
       <form className="forgot-password-form">
         {/* Email Input */}
         <div className="form-group">
-          <label htmlFor="email">E-mail:</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -33,7 +32,7 @@ const ForgotPassword = () => {
         {/* Buttons positioned left and right */}
         <div className="button-container">
           {/* Back to Login Button */}
-          <button type="button" className="back-login-btn" onClick={handleBackToLogin}>
+          <button type="button" className="back-login-btn" onClick={()=>navigate("/")}>
             Back to Login
           </button>
 
@@ -48,6 +47,7 @@ const ForgotPassword = () => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };
