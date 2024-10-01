@@ -2,15 +2,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS } from '../constant/constant';
+import defaultState from './initialState'
 
 
-const initialState = {
-    loading: false,
-    users: [],
-    error: '',
-  };
 
-export const userReducer = (state = initialState, action) => {
+
+export const userReducer = (state = defaultState, action) => {
     switch (action.type) {
       case FETCH_USERS_REQUEST:
         return {

@@ -1,5 +1,6 @@
-import axios from "axios";
+
 import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS } from "../constant/constant";
+import api from "./utils";
 
 export const fetchUsersRequest = () => ({
     type: FETCH_USERS_REQUEST,
@@ -20,7 +21,7 @@ export const fetchUsersRequest = () => ({
     return async (dispatch) => {
       dispatch(fetchUsersRequest());  // Dispatching loading state
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        const response = await api.get();
         console.log("sasa",response)
         dispatch(fetchUsersSuccess(response.data));  // Dispatch success if the request is successful
       } catch (error) {

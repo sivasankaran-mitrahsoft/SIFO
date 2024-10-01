@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchUsers } from '../../redux/action';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -9,6 +11,10 @@ const Login = () => {
     console.log('Login details:', { email, password });
     // Add your login logic here
   };
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(fetchUsers())
+  },[])
 
   return (
     <div className="login-container">

@@ -28,7 +28,9 @@ const AppRouter = () => {
         // </Router>
         <Router basename="/">
             <Routes>
-                <Route path="/" element={<view.Login />} />
+                <Route path={'/'} element={<view.Login />} />
+                <Route path="/forgotpassword" element={<view.ForgotPassword />} />
+                <Route path="/changepassword" element={<view.ChangePassword />} />
             </Routes>
         </Router>
     );

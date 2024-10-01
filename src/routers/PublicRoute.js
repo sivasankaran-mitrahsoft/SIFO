@@ -2,14 +2,13 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 const PublicRoute = (props) => {
-  const { component: Component, path, ...rest } = props;
-  const shouldRender = props.computedMatch.path === path;
+  // const { element: Component, path, ...rest } = props;
 
-  if (!shouldRender) return null;
+console.log("props",props);
 
   return (
     <React.Fragment>
-      <Route {...rest} element={Component} />
+      <Route path={props.path} element={props.element} />
     </React.Fragment>
   );
 };
