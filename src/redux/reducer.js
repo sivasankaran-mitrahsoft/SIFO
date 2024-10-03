@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS } from '../constant/constant';
+import { FETCH_LOGIN_SUCCESS, FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, LOGIN_DETAILS } from '../constant/constant';
 import defaultState from './initialState'
 
 
@@ -9,23 +9,13 @@ import defaultState from './initialState'
 
 export const userReducer = (state = defaultState, action) => {
     switch (action.type) {
-      case FETCH_USERS_REQUEST:
-        return {
-          ...state,
-          loading: true,
-        };
-      case FETCH_USERS_SUCCESS:
-        return {
-          loading: false,
-          users: action.payload,
-          error: '',
-        };
-      case FETCH_USERS_FAILURE:
-        return {
-          loading: false,
-          users: [],
-          error: action.payload,
-        };
+     
+        case LOGIN_DETAILS:
+            return {
+                ...state,
+                loginDetails: action.payload
+            };
+
       default:
         return state;
     }

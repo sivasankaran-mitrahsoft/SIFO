@@ -1,4 +1,4 @@
-// Variables for theme colors
+
 $background-color: #f0f0f0;
 $box-background: white;
 $primary-color: #4CAF50;
@@ -7,7 +7,7 @@ $input-border: #ccc;
 $shadow-color: rgba(0, 0, 0, 0.1);
 // $background-image: url('https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=800');
 
-// Container that centers the login form
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -17,7 +17,6 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   background-image: url('https://c1.wallpaperflare.com/preview/236/549/130/stethoscope-hospital-doctor-health.jpg');
 }
 
-// Styling for the login box
 .login-box {
   background-color: $box-background;
   padding: 2rem;
@@ -68,7 +67,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
       }
     }
     
-    // Login button
+    
     .login-btn {
       width: 100%;
       padding: 0.75rem;

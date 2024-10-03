@@ -31,6 +31,7 @@ const AppRouter = () => {
                 <Route path={'/'} element={<view.Login />} />
                 <Route path="/forgotpassword" element={<view.ForgotPassword />} />
                 <Route path="/changepassword" element={<view.ChangePassword />} />
+                <Route path="/resetpassword" element={<view.ResetPassword />} />
             </Routes>
         </Router>
     );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchUsers } from "../../redux/action";
 import { useDispatch } from "react-redux";
 
-const ChangePassword = () => {
+const ResetPassword = () => {
     const [oldpassword, setOldpassword] = useState();
     const [newpassword, setNewpassword] = useState();
     const [repeatpassword, setRepeatpassword] = useState();
@@ -15,7 +15,7 @@ const ChangePassword = () => {
     return (
         <div className="login-container">
             <div className="login-box">
-                <h2>Change Password</h2>
+                <h2>Reset Password</h2>
                 <form>
                     <div className="input-group">
                         <label htmlFor="oldpassword">Old Password</label>
@@ -47,46 +47,10 @@ const ChangePassword = () => {
                             required
                         />
                     </div>
-                    <div className="otpstyle">
-                        <p required>OTP Reception</p>
-                    </div>
-                    <div className="radiogroups">
-                        <div>
-                            <label>SMS</label>
-                            <input
-                                type="radio"
-                                value="SMS"
-                                className="radiospace"
-                                checked={selectedOption === "SMS"}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div>
-                            <label>Mail</label>
-                            <input
-                                type="radio"
-                                value="Mail"
-                                className="radiospace"
-                                checked={selectedOption === "Mail"}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div>
-                            <label>Twilio Apps Authy</label>
-                            <input
-                                type="radio"
-                                value="Twilio Apps Authy"
-                                checked={selectedOption === "Twilio Apps Authy"}
-                                onChange={handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <h2></h2>
-                    </div>
+                    
                     <div className="button-container-change">
                         <button type="button" className="save-btn">
-                            Save
+                            Change Password
                         </button>
                         <button type="button" className="cancel-btn">
                             Cancel
@@ -98,4 +62,4 @@ const ChangePassword = () => {
     );
 };
 
-export default ChangePassword;
+export default ResetPassword;
