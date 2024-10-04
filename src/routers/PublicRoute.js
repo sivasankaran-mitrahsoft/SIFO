@@ -1,16 +1,11 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-const PublicRoute = (props) => {
-  // const { element: Component, path, ...rest } = props;
-
-console.log("props",props);
-
-  return (
-    <React.Fragment>
-      <Route path={props.path} element={props.element} />
-    </React.Fragment>
-  );
+const PublicRoute = ({ element, path }) => {
+  return ( <Routes>
+    <Route path={path} element={element} />
+  </Routes>
+  )
 };
 
 export default PublicRoute;

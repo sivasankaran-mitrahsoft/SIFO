@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { fetchUsers } from "../../redux/action";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 
 const ResetPassword = () => {
     const [oldpassword, setOldpassword] = useState();

@@ -1,31 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUsers, onJustReducerUpdate } from '../../redux/action';
+import { onJustReducerUpdate } from '../../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
-import { json, Link } from 'react-router-dom';
-import { FETCH_LOGIN_SUCCESS, LOGIN_DETAILS } from '../../constant/constant';
+import { Link } from 'react-router-dom';
+import { LOGIN_DETAILS } from '../../constant/constant';
 import { onGetLoginDetails } from '../../services';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const profileDetails = useSelector((state) => state.loginDetails)
+  const [showPassword, setShowPassword] = useState(false); 
+
+  const profileDetails = useSelector((state) => state.loginDetails);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login details:', { email, password });
-    // Add your login logic here
+    
   };
+
   const dispatch = useDispatch();
   useEffect(() => {
-    onGetLoginDetails().then(res => {
-      dispatch(onJustReducerUpdate(res.data,LOGIN_DETAILS))
-      localStorage.setItem(LOGIN_DETAILS, JSON.stringify(res.data))
-      return
-  })
-   
-    // dispatch(fetchUsers())
-  }, [])
+    onGetLoginDetails().then((res) => {
+      dispatch(onJustReducerUpdate(res.data, LOGIN_DETAILS));
+      localStorage.setItem(LOGIN_DETAILS, JSON.stringify(res.data));
+    });
+  }, [dispatch]);
 
-  console.log("profileDetails",profileDetails)
+  const togglePasswordVisibility = () => {
+    if(password !== ''){
+      setShowPassword(!showPassword);
+    }
+  
+  };
+
+  const isFormValid = email !== '' && password !== ''; 
+
   return (
     <div className="login-container">
       <div className="login-box">
@@ -44,16 +54,23 @@ const Login = () => {
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              required
-            />
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? 'text' : 'password'} 
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                required
+              />
+              <span onClick={ togglePasswordVisibility} className="eye-icon">
+                {showPassword ? <FaEye />  : <FaEyeSlash />}  
+              </span>
+            </div>
           </div>
-          <button type="submit" className="login-btn">Login</button>
+          <button type="submit" className="login-btn" disabled={!isFormValid}> 
+            Login
+          </button>
         </form>
         <div className="forgot-password">
           <Link to="/forgotpassword">Forgot Password?</Link>

@@ -14,7 +14,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   align-items: center;
   height: 100vh;
   background-size: cover;
-  background-image: url('https://c1.wallpaperflare.com/preview/236/549/130/stethoscope-hospital-doctor-health.jpg');
+  background-image: url('https://images.pexels.com/photos/20140026/pexels-photo-20140026/free-photo-of-medicine-bottles-and-pills.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
 }
 
 .login-box {
@@ -43,7 +43,22 @@ $shadow-color: rgba(0, 0, 0, 0.1);
     .input-group {
       margin-bottom: 1.5rem;
       text-align: left;
-
+      .password-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      
+      .eye-icon {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+      }
+      
+      .input-group input[type="password"],
+      .input-group input[type="text"] {
+        padding-right: 30px; /* Add padding to make room for the eye icon */
+      }
       label {
         display: block;
         margin-bottom: 0.5rem;
@@ -78,9 +93,9 @@ $shadow-color: rgba(0, 0, 0, 0.1);
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s;
-
-      &:hover {
-        background-color: $hover-color;
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
       }
     }
   }

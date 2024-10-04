@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "../views/common/Header";
 
 const PrivateRoute = (props) => {
@@ -22,11 +22,11 @@ const PrivateRoute = (props) => {
   // const headerRestrictRoutes = ['/store-preview', '/affiliate-dashboard', '/store-online']
 
   return (
-    <React.Fragment>
+    <Routes>
       {/* {headerRestrictRoutes.includes(window.location.pathname) ? <div className="Test d-none d-md-block"><Header /></div> : <Header />} */}
       <Header />
       <Route {...rest} component={Component} />
-    </React.Fragment>
+      </Routes>
   );
 };
 
